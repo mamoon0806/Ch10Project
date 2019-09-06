@@ -15,6 +15,15 @@ public class TextAnalyzer {
 		return textBlock.toString();
 	}
 	
-	public 
+	public void setTextBlock(String newText) {
+		if(newText != null) {
+			textBlock = new StringBuilder(newText);
+		}
+	}
+	
+	public int getNumberOfWords() {
+		String text = textBlock.toString();
+		
+	}
 
 }
