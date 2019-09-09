@@ -22,8 +22,57 @@ public class TextAnalyzer {
 	}
 	
 	public int getNumberOfWords() {
-		String text = textBlock.toString();
+		String[] words = textBlock.toString().split("\\s+");
+		return words.length;
 		
+	}
+	
+	public int getNumberOfVowels() {
+		String str = textBlock.toString();
+		int count = 0;
+		for(int i = 0; i < str.length(); i++) {
+			if (Character.toUpperCase(str.charAt(i)) == 'A' ||
+				Character.toUpperCase(str.charAt(i)) == 'E' ||
+				Character.toUpperCase(str.charAt(i)) == 'I' ||
+				Character.toUpperCase(str.charAt(i)) == 'O' ||
+				Character.toUpperCase(str.charAt(i)) == 'U'){
+                
+				count++;
+                
+            }
+        }
+		
+        return count;
+    }
+	
+	public int getNumberOfConsonants() {
+		String str = textBlock.toString();
+		int count = 0;
+		for(int i = 0; i < str.length(); i++) {
+			if (!(Character.toUpperCase(str.charAt(i)) == 'A' ||
+				Character.toUpperCase(str.charAt(i)) == 'E' ||
+				Character.toUpperCase(str.charAt(i)) == 'I' ||
+				Character.toUpperCase(str.charAt(i)) == 'O' ||
+				Character.toUpperCase(str.charAt(i)) == 'U')){
+                
+				count++;
+                
+            }
+        }
+		
+        return count;
+    }
+	
+	public String addSubString(String addedText, int frontOrBack) {
+		if(frontOrBack == ADD_TO_FRONT) {
+			textBlock = textBlock.insert(0, addedText);
+		}
+		
+		if(frontOrBack == ADD_TO_BACK) {
+			textBlock = textBlock.append(addedText);
+		}
+		
+		return textBlock.toString();
 	}
 
 }
