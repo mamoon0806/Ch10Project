@@ -53,7 +53,8 @@ public class TextAnalyzer {
 				Character.toUpperCase(str.charAt(i)) == 'E' ||
 				Character.toUpperCase(str.charAt(i)) == 'I' ||
 				Character.toUpperCase(str.charAt(i)) == 'O' ||
-				Character.toUpperCase(str.charAt(i)) == 'U')){
+				Character.toUpperCase(str.charAt(i)) == 'U' ||
+				str.charAt(i) == ' ')){
                 
 				count++;
                 
